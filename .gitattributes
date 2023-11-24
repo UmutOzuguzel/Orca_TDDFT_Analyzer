@@ -1,2 +1,28 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Specific line endings for certain file types
+*.txt text
+*.bat text eol=crlf
+*.sh text eol=lf
+
+# Treat certain file types as binary to prevent text normalization
+*.jpg binary
+*.png binary
+
+# Exclude certain paths and files from git archives
+/tests export-ignore
+/.gitignore export-ignore
+
+# Use language-specific diff settings
+*.py diff=python
+
+# Custom merge strategy for specific file types
+*.properties merge=ours
+
+# Apply custom filter to specific file types
+*.xml filter=xmlFormatter
+
+# Aggressive EOL normalization for all text files (optional, use with caution)
+# * text=auto eol=lf
+
